@@ -1,0 +1,53 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   func.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dprovorn <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/13 16:27:11 by dprovorn          #+#    #+#             */
+/*   Updated: 2016/12/27 15:08:09 by ebitca           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "header.h"
+
+void	reset_flags()
+{
+	int i;
+
+	i = -1;
+	while (++i < 14)
+		g_flag[i] = 0;
+}
+
+void    reset_bratan()
+{
+
+	g_jump = -1;
+	g_cont = 0;
+	g_small = -1;
+	reset_flags();
+}
+
+void	delete_sign()
+{
+	g_flag[3]++;
+	g_flag[0] = -1;
+	g_flag[1] = 0;
+}
+
+void	ft_putchar(char c)
+{
+	write (1, &c, 1);
+	++g_cont;
+}
+
+void	ft_putstr(char *s)
+{
+	while (*s)
+	{
+		ft_putchar(*s);
+		s++;
+	}
+}
