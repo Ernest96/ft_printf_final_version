@@ -6,13 +6,13 @@
 /*   By: dprovorn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/27 15:42:17 by dprovorn          #+#    #+#             */
-/*   Updated: 2016/12/27 15:42:20 by dprovorn         ###   ########.fr       */
+/*   Updated: 2016/12/27 16:36:19 by ebitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void		get_data_type_2(long long *temp, un *uni, short spec)
+void		get_data_type_2(long long *temp, t_un *uni, short spec)
 {
 	if (spec == 9 || spec == 31)
 		*temp = (char)uni->chr;
@@ -28,7 +28,7 @@ void		get_data_type_2(long long *temp, un *uni, short spec)
 		*temp = (wchar_t)uni->wchr;
 }
 
-long long	get_data_type(un *uni, short spec)
+long long	get_data_type(t_un *uni, short spec)
 {
 	long long temp;
 

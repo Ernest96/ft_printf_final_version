@@ -1,12 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_l_1.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ebitca <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/27 15:55:20 by ebitca            #+#    #+#             */
+/*   Updated: 2016/12/27 16:04:21 by ebitca           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header.h"
 
-short check_l_spec(const char *s)
+short	check_l_spec(const char *s)
 {
 	short result;
 
 	if (s[g_jump] == 'l')
 	{
-
 		if ((result = check_l_spec_2(s)) && result)
 			return (result);
 		if ((result = check_l_spec_3(s)) && result)
@@ -25,7 +36,7 @@ short check_l_spec(const char *s)
 
 short	check_l_spec_2(const char *s)
 {
-	if (s[g_jump  + 1] == 'd' || s[g_jump + 1] == 'D' || s[g_jump + 1] == 'i')
+	if (s[g_jump + 1] == 'd' || s[g_jump + 1] == 'D' || s[g_jump + 1] == 'i')
 	{
 		++g_jump;
 		return (3);
@@ -39,7 +50,7 @@ short	check_l_spec_2(const char *s)
 	if (s[g_jump + 1] == 'x')
 	{
 		++g_jump;
-		g_small  = 1;
+		g_small = 1;
 		g_flag[7] = 1;
 		return (4);
 	}
@@ -51,19 +62,18 @@ short	check_l_spec_2(const char *s)
 	return (0);
 }
 
-
 short	check_l_spec_3(const char *s)
 {
 	if (s[g_jump + 1] == 'X')
 	{
 		++g_jump;
-		g_small  = 0;
+		g_small = 0;
 		g_flag[7] = 1;
 		return (4);
 	}
 	if (s[g_jump + 1] == 'o' || s[g_jump + 1] == 'O')
 	{
-		if(g_flag[11] && g_flag[9])
+		if (g_flag[11] && g_flag[9])
 			g_flag[4]--;
 		++g_jump;
 		g_flag[7] = 2;
@@ -74,14 +84,14 @@ short	check_l_spec_3(const char *s)
 		++g_jump;
 		return (set_pointer());
 	}
-	if (check_lcC(s))
+	if (check_lc(s))
 		return (34);
 	return (0);
 }
 
 short	check_l_spec_4(const char *s)
 {
-	if (s[g_jump + 1] == 'u' || s[g_jump + 1] == 'U') 
+	if (s[g_jump + 1] == 'u' || s[g_jump + 1] == 'U')
 	{
 		delete_sign();
 		++g_jump;
@@ -95,7 +105,7 @@ short	check_l_spec_4(const char *s)
 	if (s[g_jump + 1] == 'x')
 	{
 		++g_jump;
-		g_small  = 1;
+		g_small = 1;
 		g_flag[7] = 1;
 		return (2);
 	}
@@ -107,24 +117,24 @@ short	check_l_spec_5(const char *s)
 	if (s[g_jump + 1] == 'X')
 	{
 		++g_jump;
-		g_small  = 0;
+		g_small = 0;
 		g_flag[7] = 1;
 		return (2);
 	}
 	if (s[g_jump + 1] == 'o' || s[g_jump + 1] == 'O')
 	{
-		if(g_flag[11] && g_flag[9])
+		if (g_flag[11] && g_flag[9])
 			g_flag[4]--;
 		++g_jump;
 		g_flag[7] = 2;
 		return (2);
 	}
 	if (s[g_jump + 1] == 'p')
-	{	
+	{
 		++g_jump;
 		return (set_pointer());
 	}
-	if (check_lcC(s))
+	if (check_lc(s))
 		return (34);
 	return (0);
 }

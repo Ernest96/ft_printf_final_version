@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_h_1.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ebitca <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/27 15:47:00 by ebitca            #+#    #+#             */
+/*   Updated: 2016/12/27 15:51:20 by ebitca           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header.h"
 
 short	check_h_spec_2(const char *s)
 {
-	if (s[g_jump + 1] == 'd' || s[g_jump +1] == 'i') 
+	if (s[g_jump + 1] == 'd' || s[g_jump + 1] == 'i')
 	{
 		++g_jump;
 		return (7);
@@ -12,7 +24,7 @@ short	check_h_spec_2(const char *s)
 		++g_jump;
 		return (3);
 	}
-	if (s[g_jump + 1] == 'u') 
+	if (s[g_jump + 1] == 'u')
 	{
 		delete_sign();
 		++g_jump;
@@ -32,20 +44,20 @@ short	check_h_spec_3(const char *s)
 	if (s[g_jump + 1] == 'x')
 	{
 		++g_jump;
-		g_small  = 1;
+		g_small = 1;
 		g_flag[7] = 1;
 		return (8);
 	}
 	if (s[g_jump + 1] == 'X')
 	{
 		++g_jump;
-		g_small  = 0;
+		g_small = 0;
 		g_flag[7] = 1;
 		return (8);
 	}
 	if (s[g_jump + 1] == 'o')
 	{
-		if(g_flag[11] && g_flag[9])
+		if (g_flag[11] && g_flag[9])
 			g_flag[4]--;
 		++g_jump;
 		g_flag[7] = 2;
@@ -58,7 +70,7 @@ short	check_h_spec_4(const char *s)
 {
 	if (s[g_jump + 1] == 'O')
 	{
-		if(g_flag[11] && g_flag[9])
+		if (g_flag[11] && g_flag[9])
 			g_flag[4]--;
 		++g_jump;
 		g_flag[7] = 2;
@@ -73,7 +85,7 @@ short	check_h_spec_4(const char *s)
 	{
 		++g_jump;
 		g_flag[4] = 0;
-		if(g_flag[13])
+		if (g_flag[13])
 			g_flag[2] = 1;
 		g_flag[8] = 0;
 		return (34);
@@ -83,7 +95,7 @@ short	check_h_spec_4(const char *s)
 
 short	check_h_spec_5(const char *s)
 {
-	if (s[g_jump + 1] == 'd' || s[g_jump +1] == 'i') 
+	if (s[g_jump + 1] == 'd' || s[g_jump + 1] == 'i')
 	{
 		++g_jump;
 		return (9);
@@ -93,7 +105,7 @@ short	check_h_spec_5(const char *s)
 		++g_jump;
 		return (3);
 	}
-	if (s[g_jump + 1] == 'u') 
+	if (s[g_jump + 1] == 'u')
 	{
 		delete_sign();
 		++g_jump;

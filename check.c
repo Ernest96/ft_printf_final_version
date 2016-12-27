@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ebitca <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/27 15:19:42 by ebitca            #+#    #+#             */
+/*   Updated: 2016/12/27 16:03:18 by ebitca           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header.h"
 
 int		check_char(const char *s)
@@ -8,41 +20,46 @@ int		check_char(const char *s)
 		g_flag[5] = 1;
 	else if (s[g_jump] == '0')
 		modify_zero();
-    else if (s[g_jump] == '#')
-        g_flag[9] = 1;
+	else if (s[g_jump] == '#')
+		g_flag[9] = 1;
 	else if (s[g_jump] == '.')
-       return (modify_dot());
+		return (modify_dot());
 	else if (s[g_jump] == '%')
 		return (modify_percent(s));
 	else if (s[g_jump] >= '1' && s[g_jump] <= '9')
-		return(3);
+		return (3);
 	else
 	{
 		g_flag[3]--;
 		if (g_flag[13])
 			g_flag[2] = 1;
-        g_flag[8] = 0;
+		g_flag[8] = 0;
 		check_flag_array(s[g_jump], 31);
 		return (0);
 	}
 	return (1);
 }
 
+void	init2(void)
+{
+	g_flag[4] = 0;
+	g_flag[8] = 0;
+}
+
 short	check_single(const char *s)
 {
 	if (s[g_jump] == 's')
-        return (30);
-    if (s[g_jump] == 'S')
-    	return (33);
-    if (s[g_jump] == 'C' || s[g_jump] == 'c')
-    {
-    	if(g_flag[13])
+		return (30);
+	if (s[g_jump] == 'S')
+		return (33);
+	if (s[g_jump] == 'C' || s[g_jump] == 'c')
+	{
+		if (g_flag[13])
 			g_flag[2] = 1;
-    	g_flag[8] = 0;
-    	g_flag[4] = 0;
-    }
-    if (s[g_jump] == 'C')
-    	return (34);
+		init2();
+	}
+	if (s[g_jump] == 'C')
+		return (34);
 	if (s[g_jump] == 'c')
 		return (31);
 	if (s[g_jump] == 'd' || s[g_jump] == 'i')
@@ -62,9 +79,9 @@ short	is_spec(const char *s)
 {
 	short result;
 
-  	result = check_single(s);
-  	if (result)
-  		return (result);
+	result = check_single(s);
+	if (result)
+		return (result);
 	if (s[g_jump] == 'p')
 		return (set_pointer());
 	result = check_ox(s);
@@ -85,7 +102,7 @@ short	is_spec(const char *s)
 	return (0);
 }
 
-short	check_lcC(const char *s)
+short	check_lc(const char *s)
 {
 	if (s[g_jump + 1] == 'c' || s[g_jump + 1] == 'C')
 	{

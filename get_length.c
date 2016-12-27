@@ -6,7 +6,7 @@
 /*   By: dprovorn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/27 15:39:54 by dprovorn          #+#    #+#             */
-/*   Updated: 2016/12/27 15:40:01 by dprovorn         ###   ########.fr       */
+/*   Updated: 2016/12/27 16:37:19 by ebitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int		get_length_2(long long temp, unsigned long long uns_temp, short spec)
 	return (i);
 }
 
-int		get_length(un *uni, short spec)
+int		get_length(t_un *uni, short spec)
 {
 	long long			temp;
 	unsigned long long	uns_temp;

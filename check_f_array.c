@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_f_array.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ebitca <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/27 15:36:13 by ebitca            #+#    #+#             */
+/*   Updated: 2016/12/27 15:36:16 by ebitca           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header.h"
 
 void	check_f_array_2(short spec)
@@ -12,7 +24,7 @@ void	check_f_array_2(short spec)
 			ft_putchar(' ');
 }
 
-void	check_f_array_3()
+void	check_f_array_3(void)
 {
 	int i;
 
@@ -21,7 +33,7 @@ void	check_f_array_3()
 	{
 		if (g_flag[3] && g_flag[2] && g_flag[9])
 			print_diez();
-		while (++i < g_flag[3])    // Am mai facut un ciclu identic cu cel precedent (rindul 92) pentru ca plusul si minusul sa vina inaintea zeroului
+		while (++i < g_flag[3])
 			if (g_flag[2])
 				ft_putchar('0');
 	}

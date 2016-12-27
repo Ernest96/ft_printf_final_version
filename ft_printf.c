@@ -6,7 +6,7 @@
 /*   By: dprovorn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/13 16:16:54 by dprovorn          #+#    #+#             */
-/*   Updated: 2016/12/27 15:45:59 by dprovorn         ###   ########.fr       */
+/*   Updated: 2016/12/27 16:12:44 by ebitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int		ft_printf(const char *s, ...)
 {
 	va_list mylist;
 
-	setlocale(LC_ALL, "");
 	reset_bratan();
 	va_start(mylist, s);
 	while (s[++g_jump])

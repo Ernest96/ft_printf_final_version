@@ -6,7 +6,7 @@
 /*   By: dprovorn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/27 15:31:54 by dprovorn          #+#    #+#             */
-/*   Updated: 2016/12/27 15:32:01 by dprovorn         ###   ########.fr       */
+/*   Updated: 2016/12/27 16:43:30 by ebitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ void	print_nbr_2(short spec, int *abs_length, int length, long long ll)
 
 void	print_nbr(va_list *mylist, short spec)
 {
-	int	length;
-	int	abs_length;
-	un	uni;
+	int		length;
+	int		abs_length;
+	t_un	uni;
 
 	if (g_flag[12])
 		uni.ll = (long long)va_arg(*mylist, void*);
