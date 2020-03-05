@@ -1,2 +1,4 @@
 # ft_printf
-patani daca cititi si ati dat proiectu voi sinteti molodtzi. Ernest si Danu din proshloe. Uda4i la fdf ! da Danu o zis la push swap !
+
+My own implementation of printf() function from stdio.h
+Verified with Cursus42 tests - 99 points.
